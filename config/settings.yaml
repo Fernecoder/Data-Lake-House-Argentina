@@ -1,22 +1,40 @@
-project_id: data-lake-house-478602
+project:
+  id: data-lake-house-478602
+  env: dev
 
-bucket_raw: data-lake-ar-raw
+gcs:
+  bucket_raw: data-lake-ar-raw
+  raw_prefix: raw/ipc
 
-base_url: "https://www.indec.gob.ar"
+local:
+  tmp_path: ./tmp
 
-list_page_path: "/indec/web/Nivel4-Tema-3-5-31"
+sources:
+  ipc:
+    frequency: monthly
+    provider: indec
+    description: >
+      Índice de Precios al Consumidor (IPC).
+      Archivos publicados por INDEC. Algunos endpoints
+      se sobrescriben mensualmente.
 
-download_path_prefix: "/ftp/cuadros/economia/"
+    datasets:
+      - name: serie_ipc_divisiones
+        format: csv
+        url: https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv
 
-file_patterns:
-ipc:
-  - ^sh_ipc_(\d{1,2})_(\d{2})\.xls$   # histórico completo
-  - ^serie_ipc_divisiones\.csv$
-  - ^sh_ipc_aperturas\.xls$
-  - ^serie_ipc_aperturas\.csv$
-  - ^sh_ipc_precios_promedio\.xls$
-  - ^serie_ipc_metadatos\.txt$
+      - name: serie_ipc_aperturas
+        format: csv
+        url: https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_aperturas.csv
 
-local_tmp_path: ./tmp 
+      - name: serie_ipc_metadatos
+        format: txt
+        url: https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_metadatos.txt
 
-bucket_raw_path_prefix: raw/ipc/
+      - name: ipc_historico_divisiones_xls
+        format: xls
+        notes: >
+          Archivo histórico que INDEC reemplaza mensualmente.
+          El nombre puede cambiar (ej: sh_ipc_11_25.xls).
+          Se versiona por hash en RAW.
+        url: https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_11_25.xls

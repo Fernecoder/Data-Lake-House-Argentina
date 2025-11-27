@@ -1,0 +1,20 @@
+ÍNDICE DE PRECIOS AL CONSUMIDOR (IPC)
+
+
+Referencias:
+
+Codigo: Código del árbol de agregación. Índice de precios al consumidor con cobertura nacional. Resultados por región. Diciembre 2016=100
+Descripcion_divisiones: Descripción del árbol de agregación por divisiones. Índice de precios al consumidor con cobertura nacional. Resultados por región. Diciembre 2016=100
+Descripcion_aperturas: Descripción del árbol de agregación por aperturas.Índice de precios al consumidor con cobertura nacional. Resultados por región. Diciembre 2016=100
+Clasificador: Nivel general y divisiones COICOP. Índice de precios al consumidor con cobertura nacional. Resultados por región. Diciembre 2016=100
+Indice_IPC: Índice de precios al consumidor con cobertura nacional. Resultados por región. Diciembre 2016=100
+v_m_IPC: Variación porcentual intermensual del Índice de precios al consumidor con cobertura nacional. Resultados por región. Diciembre 2016=100. El inicio de la serie de variación intermensual es en Enero 2017.
+v_i_a_IPC: Variación porcentual interanual del Índice de precios al consumidor con cobertura nacional. Resultados por región. Diciembre 2016=100. El inicio de la serie de variación interanual es en Diciembre 2017.
+
+Notas:
+NA: para el período de referencia "No aplica" el cálculo de la variación correspondiente
+
+Fuente:
+INDEC, Dirección Nacional de Estadísticas de Precios. Dirección de Índices de Precios de Consumo
+
+Actualizado al: 12/11/2025
