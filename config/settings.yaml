@@ -1,2 +1,22 @@
 project_id: data-lake-house-478602
+
 bucket_raw: data-lake-ar-raw
+
+base_url: "https://www.indec.gob.ar"
+
+list_page_path: "/indec/web/Nivel4-Tema-3-5-31"
+
+download_path_prefix: "/ftp/cuadros/economia/"
+
+file_patterns:
+ipc:
+  - ^sh_ipc_(\d{1,2})_(\d{2})\.xls$   # histórico completo
+  - ^serie_ipc_divisiones\.csv$
+  - ^sh_ipc_aperturas\.xls$
+  - ^serie_ipc_aperturas\.csv$
+  - ^sh_ipc_precios_promedio\.xls$
+  - ^serie_ipc_metadatos\.txt$
+
+local_tmp_path: ./tmp 
+
+bucket_raw_path_prefix: raw/ipc/
